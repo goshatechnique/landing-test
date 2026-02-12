@@ -7,9 +7,291 @@
 		<link rel="stylesheet" href="/src/scss/main.scss" />
 	</head>
 	<body>
-		<div>
-			<h1>Landing</h1>
-		</div>
+		<header class="header">
+			<span class="header__logo">Super Quiz</span>
+			<div class="header__navigator">
+				<nav class="header__navigator__button">Главная</nav>
+				<nav class="header__navigator__button">Квиз</nav>
+				<nav class="header__navigator__button">Отзывы</nav>
+				<nav class="header__navigator__button">Не главная</nav>
+			</div>
+			<button class="header__contact">Связаться с нами</button>
+			<section class="header__socials">
+				<a
+					href="https://www.tiktok.com/"
+					class="header__socials__link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="/src/assets/icons/tiktok.svg"
+						alt="TikTok"
+						width="40"
+						height="40"
+					/>
+				</a>
+				<a
+					href="https://vk.com/"
+					class="header__socials__link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="/src/assets/icons/vk.svg"
+						alt="ВКонтакте"
+						width="40"
+						height="40"
+					/>
+				</a>
+				<a
+					href="https://telegram.com/"
+					class="header__socials__link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="/src/assets/icons/telegram.svg"
+						alt="Телеграм"
+						width="40"
+						height="40"
+					/>
+				</a>
+			</section>
+		</header>
+
+		<main>
+			<section class="frame2">
+				<h1 class="frame2__header">Это Супер-квиз!</h1>
+				<p class="frame2__paragraph">
+					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
+					которые любят проходить тесты!
+				</p>
+				<button class="button">Пройти супер-квиз</button>
+
+				<picture class="frame2__image frame2__image--left">
+					<source
+						srcset="
+							/src/assets/img/background.webp 1x,
+							/src/assets/img/background.webp 2x
+						"
+						type="image/webp"
+					/>
+					<img
+						src="/src/assets/img/background.png"
+						srcset="/src/assets/img/background@2x.png 2x"
+						alt=""
+						width="394"
+						height="362"
+						loading="lazy"
+					/>
+				</picture>
+
+				<picture class="frame2__image frame2__image--right">
+					<source
+						srcset="
+							/src/assets/img/background.webp 1x,
+							/src/assets/img/background.webp 2x
+						"
+						type="image/webp"
+					/>
+					<img
+						src="/src/assets/img/background.png"
+						srcset="/src/assets/img/background@2x.png 2x"
+						alt=""
+						width="394"
+						height="362"
+						loading="lazy"
+					/>
+				</picture>
+			</section>
+
+			<section class="reacts">
+				<div class="reacts__cloud">&#128515; Восхитительно</div>
+				<div class="reacts__cloud">&#128527; Лучше не бывает</div>
+				<div class="reacts__cloud">&#128540; Где найти ещё?</div>
+				<div class="reacts__cloud">&#129325; В натуре четко</div>
+				<div class="reacts__cloud">&#128539; Круто</div>
+			</section>
+
+			<section class="quiz">
+				<div>
+					<div class="quiz__story">
+						<h5 class="quiz__story__header">Какие виды тестов вам нравятся?</h5>
+						<p class="quiz__story__paragraph">
+							Кто я из вселенной Марвел, на словарный запас
+						</p>
+					</div>
+				</div>
+
+				<div class="quiz__test">
+					<h1 class="quiz__test__header">Какие виды тестов вам нравятся?</h1>
+
+					<p class="quiz__test__paragraph">
+						Многие из нас хоть раз попадались на эту удочку — хочешь пройти
+						всего один тест из интернета, и вдруг понимаешь, что пролетело
+						полдня.
+					</p>
+
+					<div class="quiz__test__tags">
+						<div>На темперамент</div>
+						<div>На IQ</div>
+						<div>На темперамент</div>
+						<div>На IQ</div>
+						<div>На темперамент</div>
+						<div>На IQ</div>
+						<div>На темперамент</div>
+						<div>На IQ</div>
+						<div>На темперамент</div>
+						<div>На IQ</div>
+						<div>На темперамент</div>
+						<div>На IQ</div>
+					</div>
+
+					<button class="button">Продолжить</button>
+				</div>
+			</section>
+
+			<section class="carousel swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide slide">
+						<div class="slide__message">
+							<div class="slide__message__avatar">
+								<img src="./src/assets/img/user1.png" width="80" height="80" />
+							</div>
+							<h3 class="slide__message__header">Андрей Пархимович</h3>
+							<p class="slide__message__paragraph">
+								В целом, конечно, постоянное информационно-пропагандистское
+								обеспечение нашей деятельности влечет за собой процесс внедрения
+								и модернизации направлений прогрессивного развития.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<div class="slide__message">
+							<div class="slide__message__avatar">
+								<img src="./src/assets/img/user2.png" width="80" height="80" />
+							</div>
+							<h3 class="slide__message__header">Тимур Никитенко</h3>
+							<p class="slide__message__paragraph">
+								Господа, глубокий уровень погружения в значительной степени
+								обусловливает важность глубокомысленных рассуждений.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<div class="slide__message">
+							<div class="slide__message__avatar">
+								<img src="./src/assets/img/user3.png" width="80" height="80" />
+							</div>
+							<h3 class="slide__message__header">Артур Усович</h3>
+							<p class="slide__message__paragraph">
+								Задача организации, в особенности же убеждённость некоторых
+								оппонентов предопределяет высокую востребованность благоприятных
+								перспектив.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<div class="slide__message">
+							<div class="slide__message__avatar">
+								<img src="./src/assets/img/user1.png" width="80" height="80" />
+							</div>
+							<h3 class="slide__message__header">Андрей Пархимович</h3>
+							<p class="slide__message__paragraph">
+								В целом, конечно, постоянное информационно-пропагандистское
+								обеспечение нашей деятельности влечет за собой процесс внедрения
+								и модернизации направлений прогрессивного развития.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<div class="slide__message">
+							<div class="slide__message__avatar">
+								<img src="./src/assets/img/user2.png" width="80" height="80" />
+							</div>
+							<h3 class="slide__message__header">Тимур Никитенко</h3>
+							<p class="slide__message__paragraph">
+								Господа, глубокий уровень погружения в значительной степени
+								обусловливает важность глубокомысленных рассуждений.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<div class="slide__message">
+							<div class="slide__message__avatar">
+								<img src="./src/assets/img/user3.png" width="80" height="80" />
+							</div>
+							<h3 class="slide__message__header">Артур Усович</h3>
+							<p class="slide__message__paragraph">
+								Задача организации, в особенности же убеждённость некоторых
+								оппонентов предопределяет высокую востребованность благоприятных
+								перспектив.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<form id="feedback" class="footer__form">
+				<div class="form-group">
+					<label for="number">Телефон</label>
+					<input type="tel" id="number" placeholder="Номер телефона" />
+				</div>
+				<div class="form-group">
+					<label for="email">Почта</label>
+					<input type="email" id="email" placeholder="Почтовый адрес" />
+				</div>
+			</form>
+			<section class="footer__socials">
+				<button
+					type="submit"
+					form="feedback"
+					class="footer__socials__button tiktoc"
+				>
+					<img
+						src="/src/assets/icons/tiktok_symbol.svg"
+						alt="TikTok"
+						width="40"
+						height="40"
+					/>
+				</button>
+				<button
+					type="submit"
+					form="feedback"
+					class="footer__socials__button vkontakte"
+				>
+					<img
+						src="/src/assets/icons/vk_symbol.svg"
+						alt="TikTok"
+						width="40"
+						height="40"
+					/>
+				</button>
+				<button
+					type="submit"
+					form="feedback"
+					class="footer__socials__button telegram"
+				>
+					<img
+						src="/src/assets/icons/telegram_symbol.svg"
+						alt="TikTok"
+						width="40"
+						height="40"
+					/>
+				</button>
+			</section>
+			<span class="footer__logo">Super Quiz</span>
+		</footer>
 
 		<script type="module" src="/src/js/main.js"></script>
 	</body>
