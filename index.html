@@ -9,13 +9,13 @@
 	<body>
 		<header class="header">
 			<span class="header__logo">Super Quiz</span>
-			<div class="header__navigator">
-				<nav class="header__navigator__button">Главная</nav>
-				<nav class="header__navigator__button">Квиз</nav>
-				<nav class="header__navigator__button">Отзывы</nav>
-				<nav class="header__navigator__button">Не главная</nav>
-			</div>
-			<button class="header__contact">Связаться с нами</button>
+			<nav class="header__navigator">
+				<a href="#main" class="header__navigator__button">Главная</a>
+				<a href="#quiz" class="header__navigator__button">Квиз</a>
+				<a href="#reviews" class="header__navigator__button">Отзывы</a>
+				<a class="header__navigator__button">Не главная</a>
+			</nav>
+			<button class="button open-quiz-modal">Связаться с нами</button>
 			<section class="header__socials">
 				<a
 					href="https://www.tiktok.com/"
@@ -44,7 +44,7 @@
 					/>
 				</a>
 				<a
-					href="https://telegram.com/"
+					href="https://web.telegram.org/k/"
 					class="header__socials__link"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -60,13 +60,13 @@
 		</header>
 
 		<main>
-			<section class="frame2">
+			<section class="frame2" id="main">
 				<h1 class="frame2__header">Это Супер-квиз!</h1>
 				<p class="frame2__paragraph">
 					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
 					которые любят проходить тесты!
 				</p>
-				<button class="button">Пройти супер-квиз</button>
+				<a href="#quiz"><button class="button">Пройти супер-квиз</button></a>
 
 				<picture class="frame2__image frame2__image--left">
 					<source
@@ -113,45 +113,27 @@
 				<div class="reacts__cloud">&#128539; Круто</div>
 			</section>
 
-			<section class="quiz">
-				<div>
-					<div class="quiz__story">
-						<h5 class="quiz__story__header">Какие виды тестов вам нравятся?</h5>
-						<p class="quiz__story__paragraph">
-							Кто я из вселенной Марвел, на словарный запас
-						</p>
-					</div>
+			<section class="quiz" id="quiz">
+				<div class="quiz__story">
+					<h5 class="quiz__story-title"></h5>
+					<p class="quiz__story-text"></p>
 				</div>
 
 				<div class="quiz__test">
-					<h1 class="quiz__test__header">Какие виды тестов вам нравятся?</h1>
-
-					<p class="quiz__test__paragraph">
+					<h1 class="quiz__test-title">Какие виды тестов вам нравятся?</h1>
+					<p class="quiz__test-text">
 						Многие из нас хоть раз попадались на эту удочку — хочешь пройти
 						всего один тест из интернета, и вдруг понимаешь, что пролетело
 						полдня.
 					</p>
 
-					<div class="quiz__test__tags">
-						<div>На темперамент</div>
-						<div>На IQ</div>
-						<div>На темперамент</div>
-						<div>На IQ</div>
-						<div>На темперамент</div>
-						<div>На IQ</div>
-						<div>На темперамент</div>
-						<div>На IQ</div>
-						<div>На темперамент</div>
-						<div>На IQ</div>
-						<div>На темперамент</div>
-						<div>На IQ</div>
-					</div>
+					<div class="quiz__test-tags"></div>
 
 					<button class="button">Продолжить</button>
 				</div>
 			</section>
 
-			<section class="carousel swiper">
+			<section class="carousel swiper" id="reviews">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide slide">
 						<div class="slide__message">
@@ -292,6 +274,81 @@
 			</section>
 			<span class="footer__logo">Super Quiz</span>
 		</footer>
+
+		<div class="modal" id="quizModal" aria-hidden="true" inert>
+			<div class="modal__overlay" tabindex="-1" data-modal-close>
+				<div
+					class="modal__container"
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="modalTitle"
+				>
+					<button class="modal__close" aria-label="Закрыть" data-modal-close>
+						&times;
+					</button>
+					<h1 class="modal__header">Заполните контактные данные</h1>
+					<p class="modal__text">
+						Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех
+						людей, которые любят проходить тесты!
+					</p>
+					<div class="modal__input-group">
+						<input
+							class="input input-name"
+							type="text"
+							placeholder="Ваше имя"
+						/>
+						<input
+							class="input input-surname"
+							type="text"
+							placeholder="Фамилия"
+						/>
+						<input
+							class="input input-comment"
+							type="text"
+							placeholder="Ваш комметарий"
+						/>
+					</div>
+					<p class="modal__text">
+						Этот квиз предназначен для тех людей, которые любят проходить тесты!
+					</p>
+					<div class="modal__radio-group">
+						<input
+							type="radio"
+							name="quizOption"
+							id="option1"
+							class="radio-button__input"
+						/>
+						<label for="option1" class="radio-button">Не знаю</label>
+
+						<input
+							type="radio"
+							name="quizOption"
+							id="option2"
+							class="radio-button__input"
+						/>
+						<label for="option2" class="radio-button">Знаю</label>
+
+						<input
+							type="radio"
+							name="quizOption"
+							id="option3"
+							class="radio-button__input"
+						/>
+						<label for="option3" class="radio-button">Увидел это</label>
+
+						<input
+							type="radio"
+							name="quizOption"
+							id="option4"
+							class="radio-button__input"
+						/>
+						<label for="option4" class="radio-button">Вон то</label>
+					</div>
+
+					<button class="button button-wide">Продолжить</button>
+				</div>
+			</div>
+		</div>
 
 		<script type="module" src="/src/js/main.js"></script>
 	</body>

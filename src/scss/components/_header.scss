@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+.header {
+	height: 64px;
+	background-color: $white;
+	border: 1px solid $whiteBorder;
+	border-top: none;
+	border-bottom-left-radius: 32px;
+	border-bottom-right-radius: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		font-family: "NeueMachina";
+		font-size: 3.6em;
+		font-weight: bold;
+		padding-left: 48px;
+	}
+
+	&__navigator {
+		display: flex;
+		&__button {
+			cursor: pointer;
+			font-size: 2em;
+			padding: 0 16px 0 16px;
+			text-decoration: none;
+			color: $black;
+		}
+	}
+
+	&__socials {
+		height: 40px;
+		padding-right: 48px;
+		&__link {
+			display: inline-block;
+			transition: 0.15s ease;
+			padding: 0 4px;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			img {
+				display: block;
+				width: 40px;
+				height: 40px;
+				object-fit: contain;
+			}
+		}
+	}
+}
