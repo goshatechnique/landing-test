@@ -1,0 +1,63 @@
+@use "../variables" as *;
+
+.checkbox-button {
+	box-sizing: border-box;
+	height: 40px;
+	border: 2px solid $black;
+	border-radius: 20px;
+	font-size: 2.4em;
+	background-color: $white;
+	color: $black;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	padding: 0 45px;
+	transition: all 0.15s ease;
+
+	&:hover {
+		background-color: $purple;
+		color: $white;
+		border-color: $purple;
+	}
+
+	.checkbox-button__input:checked + & {
+		background-color: $black;
+		color: $white;
+		padding: 0 32px 0 58px;
+
+		&::after {
+			content: "✕";
+			position: absolute;
+			top: 5px;
+			left: 20px;
+			width: 26px;
+			height: 26px;
+			border-radius: 13px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			color: $black;
+			background-color: $white;
+			font-size: 16px;
+			line-height: 16px;
+			font-weight: bold;
+		}
+
+		&:hover {
+			background-color: $black;
+			color: $white;
+			border-color: $black;
+
+			&::after {
+				color: $white;
+				background-color: $purple;
+			}
+		}
+	}
+	&__input {
+		display: none;
+	}
+}

@@ -1,0 +1,51 @@
+@use "../variables" as *;
+
+.quiz {
+	max-width: 1440px;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	margin-top: 64px;
+	gap: 16px;
+
+	&__story {
+		background-color: $black;
+		border-top-right-radius: 32px;
+		border-bottom-right-radius: 32px;
+		color: $white;
+		font-size: 1.6em;
+
+		&-title {
+			padding: 10px 24px;
+			margin: 0;
+		}
+
+		&-text {
+			padding: 10px 24px;
+			margin: 0;
+		}
+	}
+
+	&__test {
+		background-color: $white;
+		border-radius: 32px;
+		padding: 32px;
+
+		&-title {
+			font-family: "NeueMachina";
+			font-size: 7.2em;
+			font-weight: bold;
+			margin: 0;
+		}
+
+		&-text {
+			font-size: 2em;
+		}
+
+		&-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			padding-bottom: 24px;
+		}
+	}
+}

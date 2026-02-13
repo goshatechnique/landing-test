@@ -1,0 +1,68 @@
+@use "../variables" as *;
+
+.carousel {
+	width: 1440px;
+	margin: 96px 0;
+	height: 464px;
+	position: relative;
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		width: 100px;
+		height: 100px;
+		background-color: $white;
+		font-size: 16px;
+		border-radius: 32px;
+		box-shadow: 0px 24px 35px 0px $purpleShadow;
+
+		svg {
+			width: 16px;
+			height: 32px;
+			color: $black;
+		}
+	}
+
+	.slide {
+		width: 352px;
+		height: 100%;
+		border-radius: 32px;
+		background-color: orange;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+
+		&__message {
+			background-color: $white;
+			border-radius: 24px;
+			margin: 8px;
+			padding: 16px;
+			position: relative;
+
+			&__avatar {
+				position: absolute;
+				top: -44px;
+				right: 120px;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				border: 8px solid $white;
+				background-color: $whiteBorder;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+
+			&__header {
+				text-align: center;
+				font-size: 2.4em;
+				margin-top: 58px;
+			}
+
+			&__paragraph {
+				font-size: 1.6em;
+			}
+		}
+	}
+}

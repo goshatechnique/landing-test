@@ -1,0 +1,86 @@
+import { quizData } from "../helpers/index";
+
+export function renderQuestion(questionIndex = 0) {
+	const question = quizData[questionIndex];
+	if (!question) return;
+
+	const { type, question: questionText, tags } = question;
+
+	const storyTitle = document.querySelector(".quiz__story-title");
+	const testTitle = document.querySelector(".quiz__test-title");
+	const storyText = document.querySelector(".quiz__story-text");
+	const tagsContainer = document.querySelector(".quiz__test-tags");
+
+	if (!storyTitle || !testTitle || !storyText || !tagsContainer) return;
+
+	storyTitle.textContent = questionText;
+	testTitle.textContent = questionText;
+	tagsContainer.innerHTML = "";
+
+	const updateSelectedText = () => {
+		if (type === "checkbox") {
+			const selected = tags
+				.filter((t) => t.isChecked)
+				.map((t) => t.name)
+				.join(", ");
+			storyText.textContent = selected || "";
+		} else {
+			const selected = tags.find((t) => t.isChecked)?.name || "";
+			storyText.textContent = selected;
+		}
+	};
+
+	tags.forEach((tag, index) => {
+		const id = `tag-${questionIndex}-${tag.id || index}`;
+		const input = document.createElement("input");
+		input.type = type;
+		input.id = id;
+		input.className =
+			type === "checkbox" ? "checkbox-button__input" : "radio-button__input";
+		input.hidden = true;
+		input.checked = tag.isChecked || false;
+		if (type === "radio") {
+			input.name = `question-${questionIndex}`;
+		}
+
+		const label = document.createElement("label");
+		label.htmlFor = id;
+		label.className = type === "checkbox" ? "checkbox-button" : "radio-button";
+
+		if (type === "checkbox") {
+			const span = document.createElement("span");
+			span.className = "checkbox-button__text";
+			span.textContent = tag.name;
+			label.appendChild(span);
+		} else {
+			label.textContent = tag.name;
+		}
+
+		tagsContainer.appendChild(input);
+		tagsContainer.appendChild(label);
+	});
+
+	updateSelectedText();
+
+	tagsContainer.addEventListener("change", (e) => {
+		const input = e.target.closest(
+			`.${type === "checkbox" ? "checkbox-button__input" : "radio-button__input"}`,
+		);
+		if (!input) return;
+
+		const id = input.id;
+		const prefix = `tag-${questionIndex}-`;
+		const tagId = id.startsWith(prefix) ? id.slice(prefix.length) : id;
+		const tag = tags.find((t) => t.id === tagId);
+		if (!tag) return;
+
+		if (type === "checkbox") {
+			tag.isChecked = input.checked;
+		} else {
+			tags.forEach((t) => (t.isChecked = false));
+			tag.isChecked = true;
+		}
+
+		updateSelectedText();
+	});
+}
