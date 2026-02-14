@@ -1,4 +1,4 @@
-import { quizData } from "../helpers/index";
+import { quizData } from "/src/js/helpers/index";
 
 export function renderQuestion(questionIndex, options = {}) {
 	const question = quizData[questionIndex];
