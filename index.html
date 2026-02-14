@@ -4,22 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link rel="icon" href="data:;base64,=" />
 		<link rel="stylesheet" href="/src/scss/main.scss" />
 	</head>
 	<body>
 		<header class="header">
 			<span class="header__logo">Super Quiz</span>
+
+			<button class="button header__hamburger">
+				<span class="header__hamburger-text"></span>
+			</button>
+
 			<nav class="header__navigator">
-				<a href="#main" class="header__navigator__button">Главная</a>
-				<a href="#quiz" class="header__navigator__button">Квиз</a>
-				<a href="#reviews" class="header__navigator__button">Отзывы</a>
-				<a class="header__navigator__button">Не главная</a>
+				<a href="#main" class="header__navigator-link">Главная</a>
+				<a href="#quiz" class="header__navigator-link">Квиз</a>
+				<a href="#reviews" class="header__navigator-link">Отзывы</a>
+				<a href="#" class="header__navigator-link">Не главная</a>
 			</nav>
-			<button class="button open-quiz-modal">Связаться с нами</button>
+			<button class="button button-hide header__contact open-quiz-modal">
+				Связаться с нами
+			</button>
 			<section class="header__socials">
 				<a
 					href="https://www.tiktok.com/"
-					class="header__socials__link"
+					class="header__socials-link"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -32,7 +40,7 @@
 				</a>
 				<a
 					href="https://vk.com/"
-					class="header__socials__link"
+					class="header__socials-link"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -45,7 +53,7 @@
 				</a>
 				<a
 					href="https://web.telegram.org/k/"
-					class="header__socials__link"
+					class="header__socials-link"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -60,15 +68,15 @@
 		</header>
 
 		<main>
-			<section class="frame2" id="main">
-				<h1 class="frame2__header">Это Супер-квиз!</h1>
-				<p class="frame2__paragraph">
+			<section class="title" id="main">
+				<h1 class="title__header">Это Супер-квиз!</h1>
+				<p class="title__paragraph">
 					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
 					которые любят проходить тесты!
 				</p>
-				<a href="#quiz"><button class="button">Пройти супер-квиз</button></a>
+				<a href="#quiz" class="button">Пройти супер-квиз</a>
 
-				<picture class="frame2__image frame2__image--left">
+				<picture class="title__image title__image--left">
 					<source
 						srcset="
 							/src/assets/img/background.webp 1x,
@@ -86,7 +94,7 @@
 					/>
 				</picture>
 
-				<picture class="frame2__image frame2__image--right">
+				<picture class="title__image title__image--right">
 					<source
 						srcset="
 							/src/assets/img/background.webp 1x,
@@ -115,12 +123,13 @@
 
 			<section class="quiz" id="quiz">
 				<div class="quiz__story">
-					<h5 class="quiz__story-title"></h5>
-					<p class="quiz__story-text"></p>
+					<div class="quiz__story-list"></div>
 				</div>
 
 				<div class="quiz__test">
-					<h1 class="quiz__test-title">Какие виды тестов вам нравятся?</h1>
+					<div class="quiz__test-background"></div>
+					<div class="quiz__test-background-second"></div>
+					<h3 class="quiz__test-title">Какие виды тестов вам нравятся?</h3>
 					<p class="quiz__test-text">
 						Многие из нас хоть раз попадались на эту удочку — хочешь пройти
 						всего один тест из интернета, и вдруг понимаешь, что пролетело
@@ -129,19 +138,58 @@
 
 					<div class="quiz__test-tags"></div>
 
-					<button class="button">Продолжить</button>
+					<div class="quiz__navigation">
+						<button class="button button-compact quiz__prev-button">
+							Назад
+						</button>
+						<button class="button button-compact quiz__next-button">
+							Продолжить
+						</button>
+					</div>
+
+					<div class="quiz__final" style="display: none">
+						<span class="quiz__final-smile">&#128521;&#128077;</span>
+						<h3 class="quiz__final-title">
+							Спасибо за ответы! Заполните форму ниже
+						</h3>
+						<p class="quiz__final-text">
+							Ваше мнение важно для нас. Прикрепите фото с Вашей любимой
+							картинкой и оставьте комментарий насколько понравился Вам тест.
+						</p>
+						<div class="quiz__final-form">
+							<input
+								type="text"
+								class="quiz__final-textinput"
+								placeholder="Ваше мнение сюда"
+							/>
+							<select class="quiz__final-select">
+								<option value="great">Очень понравился</option>
+								<option value="bad">Не понравился</option>
+								<option value="again">Пройду ещё раз</option>
+								<option value="recommend">Посоветую всем пройти</option>
+							</select>
+						</div>
+						<button class="button button-wide quiz__restart-btn">
+							Продолжить
+						</button>
+					</div>
 				</div>
 			</section>
 
 			<section class="carousel swiper" id="reviews">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide slide">
-						<div class="slide__message">
-							<div class="slide__message__avatar">
+						<img
+							src="/src/assets/img/user_background1.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
 								<img src="./src/assets/img/user1.png" width="80" height="80" />
 							</div>
-							<h3 class="slide__message__header">Андрей Пархимович</h3>
-							<p class="slide__message__paragraph">
+							<h3 class="message__header">Андрей Пархимович</h3>
+							<p class="message__paragraph">
 								В целом, конечно, постоянное информационно-пропагандистское
 								обеспечение нашей деятельности влечет за собой процесс внедрения
 								и модернизации направлений прогрессивного развития.
@@ -150,12 +198,17 @@
 					</div>
 
 					<div class="swiper-slide slide">
-						<div class="slide__message">
-							<div class="slide__message__avatar">
+						<img
+							src="/src/assets/img/user_background2.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
 								<img src="./src/assets/img/user2.png" width="80" height="80" />
 							</div>
-							<h3 class="slide__message__header">Тимур Никитенко</h3>
-							<p class="slide__message__paragraph">
+							<h3 class="message__header">Тимур Никитенко</h3>
+							<p class="message__paragraph">
 								Господа, глубокий уровень погружения в значительной степени
 								обусловливает важность глубокомысленных рассуждений.
 							</p>
@@ -163,12 +216,17 @@
 					</div>
 
 					<div class="swiper-slide slide">
-						<div class="slide__message">
-							<div class="slide__message__avatar">
+						<img
+							src="/src/assets/img/user_background3.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
 								<img src="./src/assets/img/user3.png" width="80" height="80" />
 							</div>
-							<h3 class="slide__message__header">Артур Усович</h3>
-							<p class="slide__message__paragraph">
+							<h3 class="message__header">Артур Усович</h3>
+							<p class="message__paragraph">
 								Задача организации, в особенности же убеждённость некоторых
 								оппонентов предопределяет высокую востребованность благоприятных
 								перспектив.
@@ -177,12 +235,17 @@
 					</div>
 
 					<div class="swiper-slide slide">
-						<div class="slide__message">
-							<div class="slide__message__avatar">
+						<img
+							src="/src/assets/img/user_background1.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
 								<img src="./src/assets/img/user1.png" width="80" height="80" />
 							</div>
-							<h3 class="slide__message__header">Андрей Пархимович</h3>
-							<p class="slide__message__paragraph">
+							<h3 class="message__header">Артём Шалин</h3>
+							<p class="message__paragraph">
 								В целом, конечно, постоянное информационно-пропагандистское
 								обеспечение нашей деятельности влечет за собой процесс внедрения
 								и модернизации направлений прогрессивного развития.
@@ -191,12 +254,17 @@
 					</div>
 
 					<div class="swiper-slide slide">
-						<div class="slide__message">
-							<div class="slide__message__avatar">
+						<img
+							src="/src/assets/img/user_background2.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
 								<img src="./src/assets/img/user2.png" width="80" height="80" />
 							</div>
-							<h3 class="slide__message__header">Тимур Никитенко</h3>
-							<p class="slide__message__paragraph">
+							<h3 class="message__header">Никита Кондратенко</h3>
+							<p class="message__paragraph">
 								Господа, глубокий уровень погружения в значительной степени
 								обусловливает важность глубокомысленных рассуждений.
 							</p>
@@ -204,12 +272,17 @@
 					</div>
 
 					<div class="swiper-slide slide">
-						<div class="slide__message">
-							<div class="slide__message__avatar">
+						<img
+							src="/src/assets/img/user_background3.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
 								<img src="./src/assets/img/user3.png" width="80" height="80" />
 							</div>
-							<h3 class="slide__message__header">Артур Усович</h3>
-							<p class="slide__message__paragraph">
+							<h3 class="message__header">Савелий Смирнов</h3>
+							<p class="message__paragraph">
 								Задача организации, в особенности же убеждённость некоторых
 								оппонентов предопределяет высокую востребованность благоприятных
 								перспектив.
@@ -218,65 +291,82 @@
 					</div>
 				</div>
 
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
+				<button class="swiper-button-prev"></button>
+				<button class="swiper-button-next"></button>
 			</section>
 		</main>
 
-		<footer class="footer">
-			<form id="feedback" class="footer__form">
-				<div class="form-group">
-					<label for="number">Телефон</label>
-					<input type="tel" id="number" placeholder="Номер телефона" />
-				</div>
-				<div class="form-group">
-					<label for="email">Почта</label>
-					<input type="email" id="email" placeholder="Почтовый адрес" />
-				</div>
-			</form>
-			<section class="footer__socials">
-				<button
-					type="submit"
-					form="feedback"
-					class="footer__socials__button tiktoc"
-				>
-					<img
-						src="/src/assets/icons/tiktok_symbol.svg"
-						alt="TikTok"
-						width="40"
-						height="40"
-					/>
-				</button>
-				<button
-					type="submit"
-					form="feedback"
-					class="footer__socials__button vkontakte"
-				>
-					<img
-						src="/src/assets/icons/vk_symbol.svg"
-						alt="TikTok"
-						width="40"
-						height="40"
-					/>
-				</button>
-				<button
-					type="submit"
-					form="feedback"
-					class="footer__socials__button telegram"
-				>
-					<img
-						src="/src/assets/icons/telegram_symbol.svg"
-						alt="TikTok"
-						width="40"
-						height="40"
-					/>
-				</button>
-			</section>
-			<span class="footer__logo">Super Quiz</span>
-		</footer>
+		<div class="footer-wrapper">
+			<footer class="footer">
+				<form id="feedback" class="footer__form">
+					<div class="footer__form-group">
+						<label for="number">Телефон</label>
+						<input
+							type="tel"
+							inputmode="tel"
+							id="number"
+							placeholder="Номер телефона"
+						/>
+					</div>
+					<div class="footer__form-group">
+						<label for="email">Почта</label>
+						<input
+							type="email"
+							inputmode="email"
+							id="email"
+							placeholder="Почтовый адрес"
+						/>
+					</div>
+				</form>
+				<section class="footer__socials">
+					<a
+						href="https://www.tiktok.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div class="footer__socials-button footer__socials-button--tiktok">
+							<img
+								src="/src/assets/icons/tiktok_symbol.svg"
+								alt="TikTok"
+								width="40"
+								height="40"
+							/></div
+					></a>
+
+					<a href="https://vk.com/" target="_blank" rel="noopener noreferrer"
+						><div
+							class="footer__socials-button footer__socials-button--vkontakte"
+						>
+							<img
+								src="/src/assets/icons/vk_symbol.svg"
+								alt="vkontakte"
+								width="40"
+								height="40"
+							/></div
+					></a>
+
+					<a
+						href="https://web.telegram.org/k/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div
+							class="footer__socials-button footer__socials-button--telegram"
+						>
+							<img
+								src="/src/assets/icons/telegram_symbol.svg"
+								alt="telegram"
+								width="40"
+								height="40"
+							/></div
+					></a>
+				</section>
+				<span class="footer__logo">Super Quiz</span>
+			</footer>
+		</div>
 
 		<div class="modal" id="quizModal" aria-hidden="true" inert>
-			<div class="modal__overlay" tabindex="-1" data-modal-close>
+			<div class="modal__overlay" tabindex="-1">
 				<div
 					class="modal__container"
 					role="dialog"
@@ -286,66 +376,88 @@
 					<button class="modal__close" aria-label="Закрыть" data-modal-close>
 						&times;
 					</button>
-					<h1 class="modal__header">Заполните контактные данные</h1>
-					<p class="modal__text">
-						Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех
-						людей, которые любят проходить тесты!
-					</p>
-					<div class="modal__input-group">
-						<input
-							class="input input-name"
-							type="text"
-							placeholder="Ваше имя"
-						/>
-						<input
-							class="input input-surname"
-							type="text"
-							placeholder="Фамилия"
-						/>
-						<input
-							class="input input-comment"
-							type="text"
-							placeholder="Ваш комметарий"
-						/>
+					<div class="modal__step modal__step--1">
+						<h1 class="modal__header" id="modalTitle">
+							Заполните контактные данные
+						</h1>
+						<p class="modal__text">
+							Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех
+							людей, которые любят проходить тесты!
+						</p>
+						<div class="modal__input-group">
+							<input
+								class="input input-name"
+								type="text"
+								placeholder="Ваше имя"
+							/>
+							<input
+								class="input input-surname"
+								type="text"
+								placeholder="Фамилия"
+							/>
+							<input
+								class="input input-comment"
+								type="text"
+								placeholder="Ваш комметарий"
+							/>
+						</div>
+						<p class="modal__text">
+							Этот квиз предназначен для тех людей, которые любят проходить
+							тесты!
+						</p>
+						<div class="modal__radio-group">
+							<input
+								type="radio"
+								name="quizOption"
+								id="option1"
+								class="radio-button__input"
+							/>
+							<label for="option1" class="radio-button">Не знаю</label>
+
+							<input
+								type="radio"
+								name="quizOption"
+								id="option2"
+								class="radio-button__input"
+							/>
+							<label for="option2" class="radio-button">Знаю</label>
+
+							<input
+								type="radio"
+								name="quizOption"
+								id="option3"
+								class="radio-button__input"
+							/>
+							<label for="option3" class="radio-button">Увидел это</label>
+
+							<input
+								type="radio"
+								name="quizOption"
+								id="option4"
+								class="radio-button__input"
+							/>
+							<label for="option4" class="radio-button">Вон то</label>
+						</div>
+
+						<button class="button button-wide modal__next-btn">
+							Продолжить
+						</button>
 					</div>
-					<p class="modal__text">
-						Этот квиз предназначен для тех людей, которые любят проходить тесты!
-					</p>
-					<div class="modal__radio-group">
-						<input
-							type="radio"
-							name="quizOption"
-							id="option1"
-							class="radio-button__input"
-						/>
-						<label for="option1" class="radio-button">Не знаю</label>
 
-						<input
-							type="radio"
-							name="quizOption"
-							id="option2"
-							class="radio-button__input"
-						/>
-						<label for="option2" class="radio-button">Знаю</label>
-
-						<input
-							type="radio"
-							name="quizOption"
-							id="option3"
-							class="radio-button__input"
-						/>
-						<label for="option3" class="radio-button">Увидел это</label>
-
-						<input
-							type="radio"
-							name="quizOption"
-							id="option4"
-							class="radio-button__input"
-						/>
-						<label for="option4" class="radio-button">Вон то</label>
+					<div class="modal__step modal__step--2" style="display: none">
+						<span class="modal__smile">&#128521;</span>
+						<h2 class="modal__header">Ваши данные отправлены</h2>
+						<p class="modal__text">
+							Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех
+							людей, которые любят проходить тесты!
+						</p>
+						<button
+							class="button button-wide modal__close-btn"
+							data-modal-close
+						>
+							Вернуться на сайт
+						</button>
 					</div>
-
-					<button class="button button-wide">Продолжить</button>
 				</div>
 			</div>
 		</div>

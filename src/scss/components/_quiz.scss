@@ -1,34 +1,87 @@
 @use "../variables" as *;
 
 .quiz {
+	width: 100%;
 	max-width: 1440px;
 	display: grid;
 	grid-template-columns: 300px 1fr;
-	margin-top: 64px;
+	grid-template-areas: "story test";
+	padding-top: 64px;
 	gap: 16px;
 
 	&__story {
-		background-color: $black;
-		border-top-right-radius: 32px;
-		border-bottom-right-radius: 32px;
-		color: $white;
-		font-size: 1.6em;
-
-		&-title {
-			padding: 10px 24px;
-			margin: 0;
+		grid-area: story;
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
 		}
+		&-item {
+			background-color: $white;
+			color: $black;
+			border-top-right-radius: 16px;
+			border-bottom-right-radius: 16px;
+			cursor: pointer;
+			&:hover {
+				background-color: $purple;
+				color: $white;
+			}
 
-		&-text {
-			padding: 10px 24px;
-			margin: 0;
+			&--current {
+				background-color: $black;
+				color: $white;
+				&:hover {
+					background-color: $black;
+					color: $white;
+					cursor: default;
+				}
+			}
+
+			&-title {
+				padding: 10px 24px;
+				margin: 0;
+				font-size: 1.6em;
+			}
+			&-text {
+				min-height: 1.6em;
+				padding: 10px 24px;
+				margin: 0;
+				font-size: 1.6em;
+			}
 		}
 	}
 
 	&__test {
+		grid-area: test;
 		background-color: $white;
 		border-radius: 32px;
 		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+
+		&-background {
+			width: calc(95% - 64px);
+			height: 8px;
+			border-top-right-radius: 32px;
+			border-top-left-radius: 32px;
+			background-color: #e9c4ff;
+			position: absolute;
+			top: -8px;
+			left: calc(2.5% + 32px);
+		}
+
+		&-background-second {
+			width: calc(90% - 64px);
+			height: 8px;
+			border-top-right-radius: 32px;
+			border-top-left-radius: 32px;
+			background-color: #f0d9ff;
+			position: absolute;
+			top: -16px;
+			left: calc(5% + 32px);
+		}
 
 		&-title {
 			font-family: "NeueMachina";
@@ -46,6 +99,137 @@
 			flex-wrap: wrap;
 			gap: 10px;
 			padding-bottom: 24px;
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		gap: 12px;
+		margin-top: 24px;
+	}
+
+	&__final {
+		margin-top: 32px;
+
+		&-smile {
+			font-size: 128px;
+			line-height: 128px;
+		}
+
+		&-title {
+			font-family: "NeueMachina";
+			font-size: 7.2em;
+			margin: 16px 0;
+		}
+
+		&-text {
+			font-size: 2em;
+		}
+
+		&-form {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			margin-bottom: 32px;
+		}
+
+		&-textinput {
+			width: 70%;
+			min-width: 230px;
+			border: none;
+			outline: none;
+			border-bottom: 2px solid $black;
+			font-size: 2em;
+			background-color: $white;
+			cursor: pointer;
+			padding: 9px;
+		}
+
+		&-select {
+			padding: 0 32px;
+			min-height: 40px;
+			width: 230px;
+			border: 2px solid $black;
+			border-radius: 16px;
+			font-size: 1.6em;
+			background-color: $white;
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 1040px) {
+	.quiz {
+		&__test {
+			padding: 24px;
+
+			&-title {
+				font-size: 6.4em;
+			}
+
+			&-text {
+				font-size: 1.8em;
+			}
+		}
+		&__final {
+			&-smile {
+				font-size: 96px;
+				line-height: 96px;
+			}
+
+			&-title {
+				font-size: 6.4em;
+			}
+
+			&-text {
+				font-size: 1.8em;
+			}
+
+			&-textinput {
+				font-size: 1.8em;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.quiz {
+		&__story {
+			&-item {
+				border-radius: 16px;
+			}
+		}
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
+		grid-template-areas: "story" "test";
+		&__test {
+			padding: 18px;
+
+			&-title {
+				font-size: 5em;
+			}
+
+			&-text {
+				font-size: 1.4em;
+			}
+		}
+		&__final {
+			&-smile {
+				font-size: 96px;
+				line-height: 96px;
+			}
+
+			&-title {
+				font-size: 5em;
+			}
+
+			&-text {
+				font-size: 1.4em;
+			}
+
+			&-textinput {
+				font-size: 1.4em;
+			}
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 .checkbox-button {
 	box-sizing: border-box;
-	height: 40px;
+	min-height: 40px;
 	border: 2px solid $black;
 	border-radius: 20px;
 	font-size: 2.4em;
@@ -31,7 +31,8 @@
 		&::after {
 			content: "✕";
 			position: absolute;
-			top: 5px;
+			top: 50%;
+			transform: translateY(-50%);
 			left: 20px;
 			width: 26px;
 			height: 26px;
