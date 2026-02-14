@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="icon" href="data:;base64,=" />
+		<script type="module" crossorigin src="/assets/index-tojrBZDE.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-qLS8AWeW.css">
+	</head>
+	<body>
+		<header class="header">
+			<span class="header__logo">Super Quiz</span>
+
+			<button class="button header__hamburger">
+				<span class="header__hamburger-text"></span>
+			</button>
+
+			<nav class="header__navigator">
+				<a href="#main" class="header__navigator-link">Главная</a>
+				<a href="#quiz" class="header__navigator-link">Квиз</a>
+				<a href="#reviews" class="header__navigator-link">Отзывы</a>
+				<a href="#" class="header__navigator-link">Не главная</a>
+			</nav>
+			<button class="button button-hide header__contact open-quiz-modal">
+				Связаться с нами
+			</button>
+			<section class="header__socials">
+				<a
+					href="https://www.tiktok.com/"
+					class="header__socials-link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="/assets/tiktok-CP-B5I5k.svg"
+						alt="TikTok"
+						width="40"
+						height="40"
+					/>
+				</a>
+				<a
+					href="https://vk.com/"
+					class="header__socials-link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="/assets/vk-DKBIGk8O.svg"
+						alt="ВКонтакте"
+						width="40"
+						height="40"
+					/>
+				</a>
+				<a
+					href="https://web.telegram.org/k/"
+					class="header__socials-link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="/assets/telegram-CRfLatZp.svg"
+						alt="Телеграм"
+						width="40"
+						height="40"
+					/>
+				</a>
+			</section>
+		</header>
+
+		<main>
+			<section class="title" id="main">
+				<h1 class="title__header">Это Супер-квиз!</h1>
+				<p class="title__paragraph">
+					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
+					которые любят проходить тесты!
+				</p>
+				<a href="#quiz" class="button">Пройти супер-квиз</a>
+
+				<picture class="title__image title__image--left">
+					<source
+						srcset="/assets/background-Bj5MaMg1.webp 1x, /assets/background-Bj5MaMg1.webp 2x"
+						type="image/webp"
+					/>
+					<img
+						src="/assets/background-BfEaS4qv.png"
+						srcset="/src/assets/img/background@2x.png 2x"
+						alt=""
+						width="394"
+						height="362"
+						loading="lazy"
+					/>
+				</picture>
+
+				<picture class="title__image title__image--right">
+					<source
+						srcset="/assets/background-Bj5MaMg1.webp 1x, /assets/background-Bj5MaMg1.webp 2x"
+						type="image/webp"
+					/>
+					<img
+						src="/assets/background-BfEaS4qv.png"
+						srcset="/src/assets/img/background@2x.png 2x"
+						alt=""
+						width="394"
+						height="362"
+						loading="lazy"
+					/>
+				</picture>
+			</section>
+
+			<section class="reacts">
+				<div class="reacts__cloud">&#128515; Восхитительно</div>
+				<div class="reacts__cloud">&#128527; Лучше не бывает</div>
+				<div class="reacts__cloud">&#128540; Где найти ещё?</div>
+				<div class="reacts__cloud">&#129325; В натуре четко</div>
+				<div class="reacts__cloud">&#128539; Круто</div>
+			</section>
+
+			<section class="quiz" id="quiz">
+				<div class="quiz__story">
+					<div class="quiz__story-list"></div>
+				</div>
+
+				<div class="quiz__test">
+					<div class="quiz__test-background"></div>
+					<div class="quiz__test-background-second"></div>
+					<h3 class="quiz__test-title">Какие виды тестов вам нравятся?</h3>
+					<p class="quiz__test-text">
+						Многие из нас хоть раз попадались на эту удочку — хочешь пройти
+						всего один тест из интернета, и вдруг понимаешь, что пролетело
+						полдня.
+					</p>
+
+					<div class="quiz__test-tags"></div>
+
+					<div class="quiz__navigation">
+						<button class="button button-compact quiz__prev-button">
+							Назад
+						</button>
+						<button class="button button-compact quiz__next-button">
+							Продолжить
+						</button>
+					</div>
+
+					<div class="quiz__final" style="display: none">
+						<span class="quiz__final-smile">&#128521;&#128077;</span>
+						<h3 class="quiz__final-title">
+							Спасибо за ответы! Заполните форму ниже
+						</h3>
+						<p class="quiz__final-text">
+							Ваше мнение важно для нас. Прикрепите фото с Вашей любимой
+							картинкой и оставьте комментарий насколько понравился Вам тест.
+						</p>
+						<div class="quiz__final-form">
+							<input
+								type="text"
+								class="quiz__final-textinput"
+								placeholder="Ваше мнение сюда"
+							/>
+							<select class="quiz__final-select">
+								<option value="great">Очень понравился</option>
+								<option value="bad">Не понравился</option>
+								<option value="again">Пройду ещё раз</option>
+								<option value="recommend">Посоветую всем пройти</option>
+							</select>
+						</div>
+						<button class="button button-wide quiz__restart-btn">
+							Продолжить
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="carousel swiper" id="reviews">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide slide">
+						<img
+							src="/assets/user_background1-9blxOA95.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
+								<img src="/assets/user1-zdmd6wN5.png" width="80" height="80" />
+							</div>
+							<h3 class="message__header">Андрей Пархимович</h3>
+							<p class="message__paragraph">
+								В целом, конечно, постоянное информационно-пропагандистское
+								обеспечение нашей деятельности влечет за собой процесс внедрения
+								и модернизации направлений прогрессивного развития.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<img
+							src="/assets/user_background2-_sU1nk9B.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
+								<img src="/assets/user2-BZzcjwXP.png" width="80" height="80" />
+							</div>
+							<h3 class="message__header">Тимур Никитенко</h3>
+							<p class="message__paragraph">
+								Господа, глубокий уровень погружения в значительной степени
+								обусловливает важность глубокомысленных рассуждений.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<img
+							src="/assets/user_background3-eo9AVvR8.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
+								<img src="/assets/user3-DdXFjHsU.png" width="80" height="80" />
+							</div>
+							<h3 class="message__header">Артур Усович</h3>
+							<p class="message__paragraph">
+								Задача организации, в особенности же убеждённость некоторых
+								оппонентов предопределяет высокую востребованность благоприятных
+								перспектив.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<img
+							src="/assets/user_background1-9blxOA95.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
+								<img src="/assets/user1-zdmd6wN5.png" width="80" height="80" />
+							</div>
+							<h3 class="message__header">Артём Шалин</h3>
+							<p class="message__paragraph">
+								В целом, конечно, постоянное информационно-пропагандистское
+								обеспечение нашей деятельности влечет за собой процесс внедрения
+								и модернизации направлений прогрессивного развития.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<img
+							src="/assets/user_background2-_sU1nk9B.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
+								<img src="/assets/user2-BZzcjwXP.png" width="80" height="80" />
+							</div>
+							<h3 class="message__header">Никита Кондратенко</h3>
+							<p class="message__paragraph">
+								Господа, глубокий уровень погружения в значительной степени
+								обусловливает важность глубокомысленных рассуждений.
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide slide">
+						<img
+							src="/assets/user_background3-eo9AVvR8.png"
+							alt=""
+							class="slide__bg"
+						/>
+						<div class="message">
+							<div class="message__avatar">
+								<img src="/assets/user3-DdXFjHsU.png" width="80" height="80" />
+							</div>
+							<h3 class="message__header">Савелий Смирнов</h3>
+							<p class="message__paragraph">
+								Задача организации, в особенности же убеждённость некоторых
+								оппонентов предопределяет высокую востребованность благоприятных
+								перспектив.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<button class="swiper-button-prev"></button>
+				<button class="swiper-button-next"></button>
+			</section>
+		</main>
+
+		<div class="footer-wrapper">
+			<footer class="footer">
+				<form id="feedback" class="footer__form">
+					<div class="footer__form-group">
+						<label for="number">Телефон</label>
+						<input
+							type="tel"
+							inputmode="tel"
+							id="number"
+							placeholder="Номер телефона"
+						/>
+					</div>
+					<div class="footer__form-group">
+						<label for="email">Почта</label>
+						<input
+							type="email"
+							inputmode="email"
+							id="email"
+							placeholder="Почтовый адрес"
+						/>
+					</div>
+				</form>
+				<section class="footer__socials">
+					<a
+						href="https://www.tiktok.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div class="footer__socials-button footer__socials-button--tiktok">
+							<img
+								src="/assets/tiktok_symbol-C4BKvJom.svg"
+								alt="TikTok"
+								width="40"
+								height="40"
+							/></div
+					></a>
+
+					<a href="https://vk.com/" target="_blank" rel="noopener noreferrer"
+						><div
+							class="footer__socials-button footer__socials-button--vkontakte"
+						>
+							<img
+								src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20height='800px'%20width='800px'%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20512%20512'%20xml:space='preserve'%20fill='%23000000'%20stroke='%23000000'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cpath%20style='fill:%23ffffff;'%20d='M440.649,295.361c16.984,16.582,34.909,32.182,50.142,50.436%20c6.729,8.112,13.099,16.482,17.973,25.896c6.906,13.382,0.651,28.108-11.348,28.907l-74.59-0.034%20c-19.238,1.596-34.585-6.148-47.489-19.302c-10.327-10.519-19.891-21.714-29.821-32.588c-4.071-4.444-8.332-8.626-13.422-11.932%20c-10.182-6.609-19.021-4.586-24.84,6.034c-5.926,10.802-7.271,22.762-7.853,34.8c-0.799,17.564-6.108,22.182-23.751,22.986%20c-37.705,1.778-73.489-3.926-106.732-22.947c-29.308-16.768-52.034-40.441-71.816-67.24%20C58.589,258.194,29.094,200.852,2.586,141.904c-5.967-13.281-1.603-20.41,13.051-20.663c24.333-0.473,48.663-0.439,73.025-0.034%20c9.89,0.145,16.437,5.817,20.256,15.16c13.165,32.371,29.274,63.169,49.494,91.716c5.385,7.6,10.876,15.201,18.694,20.55%20c8.65,5.923,15.236,3.96,19.305-5.676c2.582-6.11,3.713-12.691,4.295-19.234c1.928-22.513,2.182-44.988-1.199-67.422%20c-2.076-14.001-9.962-23.065-23.933-25.714c-7.129-1.351-6.068-4.004-2.616-8.073c5.995-7.018,11.634-11.387,22.875-11.387h84.298%20c13.271,2.619,16.218,8.581,18.035,21.934l0.072,93.637c-0.145,5.169,2.582,20.51,11.893,23.931%20c7.452,2.436,12.364-3.526,16.836-8.251c20.183-21.421,34.588-46.737,47.457-72.951c5.711-11.527,10.622-23.497,15.381-35.458%20c3.526-8.875,9.059-13.242,19.056-13.049l81.132,0.072c2.406,0,4.84,0.035,7.17,0.434c13.671,2.33,17.418,8.211,13.195,21.561%20c-6.653,20.945-19.598,38.4-32.255,55.935c-13.53,18.721-28.001,36.802-41.418,55.634%20C424.357,271.756,425.336,280.424,440.649,295.361L440.649,295.361z'/%3e%3c/g%3e%3c/svg%3e"
+								alt="vkontakte"
+								width="40"
+								height="40"
+							/></div
+					></a>
+
+					<a
+						href="https://web.telegram.org/k/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div
+							class="footer__socials-button footer__socials-button--telegram"
+						>
+							<img
+								src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20fill='%23ffffff'%20width='800px'%20height='800px'%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cpath%20d='M29.919%206.163l-4.225%2019.925c-0.319%201.406-1.15%201.756-2.331%201.094l-6.438-4.744-3.106%202.988c-0.344%200.344-0.631%200.631-1.294%200.631l0.463-6.556%2011.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75%209.288-6.35-1.988c-1.381-0.431-1.406-1.381%200.288-2.044l24.837-9.569c1.15-0.431%202.156%200.256%201.781%202.013z'/%3e%3c/g%3e%3c/svg%3e"
+								alt="telegram"
+								width="40"
+								height="40"
+							/></div
+					></a>
+				</section>
+				<span class="footer__logo">Super Quiz</span>
+			</footer>
+		</div>
+
+		<div class="modal" id="quizModal" aria-hidden="true" inert>
+			<div class="modal__overlay" tabindex="-1">
+				<div
+					class="modal__container"
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="modalTitle"
+				>
+					<button class="modal__close" aria-label="Закрыть" data-modal-close>
+						&times;
+					</button>
+					<div class="modal__step modal__step--1">
+						<h1 class="modal__header" id="modalTitle">
+							Заполните контактные данные
+						</h1>
+						<p class="modal__text">
+							Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех
+							людей, которые любят проходить тесты!
+						</p>
+						<div class="modal__input-group">
+							<input
+								class="input input-name"
+								type="text"
+								placeholder="Ваше имя"
+							/>
+							<input
+								class="input input-surname"
+								type="text"
+								placeholder="Фамилия"
+							/>
+							<input
+								class="input input-comment"
+								type="text"
+								placeholder="Ваш комметарий"
+							/>
+						</div>
+						<p class="modal__text">
+							Этот квиз предназначен для тех людей, которые любят проходить
+							тесты!
+						</p>
+						<div class="modal__radio-group">
+							<input
+								type="radio"
+								name="quizOption"
+								id="option1"
+								class="radio-button__input"
+							/>
+							<label for="option1" class="radio-button">Не знаю</label>
+
+							<input
+								type="radio"
+								name="quizOption"
+								id="option2"
+								class="radio-button__input"
+							/>
+							<label for="option2" class="radio-button">Знаю</label>
+
+							<input
+								type="radio"
+								name="quizOption"
+								id="option3"
+								class="radio-button__input"
+							/>
+							<label for="option3" class="radio-button">Увидел это</label>
+
+							<input
+								type="radio"
+								name="quizOption"
+								id="option4"
+								class="radio-button__input"
+							/>
+							<label for="option4" class="radio-button">Вон то</label>
+						</div>
+
+						<button class="button button-wide modal__next-btn">
+							Продолжить
+						</button>
+					</div>
+
+					<div class="modal__step modal__step--2" style="display: none">
+						<span class="modal__smile">&#128521;</span>
+						<h2 class="modal__header">Ваши данные отправлены</h2>
+						<p class="modal__text">
+							Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех
+							людей, которые любят проходить тесты!
+						</p>
+						<button
+							class="button button-wide modal__close-btn"
+							data-modal-close
+						>
+							Вернуться на сайт
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
