@@ -1,6 +1,6 @@
-import { initCarousel } from "./components/carousel";
-import { initModal } from "./components/modal";
-import { initQuizNavigation } from "./components/quizNavigation";
+import { initCarousel } from "/src/js/components/carousel";
+import { initModal } from "/src/js/components/modal";
+import { initQuizNavigation } from "/src/js/components/quizNavigation";
 
 document.addEventListener("DOMContentLoaded", () => {
 	initQuizNavigation();

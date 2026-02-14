@@ -1,16 +1,16 @@
-@use "./variables" as *;
+@use "/src/scss/variables" as *;
 @use "./fonts";
 
-@use "./components/header";
-@use "./components/title";
-@use "./components/reacts";
-@use "./components/quiz";
-@use "./components/carousel";
-@use "./components/footer";
-@use "./components/modal";
+@use "/src/scss/components/header";
+@use "/src/scss/components/title";
+@use "/src/scss/components/reacts";
+@use "/src/scss/components/quiz";
+@use "/src/scss/components/carousel";
+@use "/src/scss/components/footer";
+@use "/src/scss/components/modal";
 
-@use "./components/checkbox";
-@use "./components/radiobutton";
+@use "/src/scss/components/checkbox";
+@use "/src/scss/components/radiobutton";
 
 html {
 	height: 100%;

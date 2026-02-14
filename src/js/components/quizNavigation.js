@@ -1,5 +1,5 @@
-import { quizData } from "../helpers/index";
-import { renderQuestion } from "./renderQuestions";
+import { quizData } from "/src/js/helpers/index";
+import { renderQuestion } from "/src/js/components/renderQuestions";
 
 let currentIndex = 0;
 const answers = [];
