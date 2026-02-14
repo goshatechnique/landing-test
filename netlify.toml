@@ -23,8 +23,5 @@
   bundle = false
   minify = false
 
-[build.processing.skip_processing]
-  skip_processing = false
-
 [build.packages]
   install_command = "npm ci --include=dev"
