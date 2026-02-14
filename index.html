@@ -4,8 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<link rel="icon" href="data:;base64,=" />
+		<link rel="icon" href="data:image/svg+xml,<svg></svg>" />
 		<link rel="stylesheet" href="/src/scss/main.scss" />
+		<link
+			rel="preload"
+			href="/src/assets/fonts/Raleway-Regular.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/src/assets/fonts/NeueMachina-Regular.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
 	</head>
 	<body>
 		<header class="header">
@@ -24,7 +38,7 @@
 			<button class="button button-hide header__contact open-quiz-modal">
 				Связаться с нами
 			</button>
-			<section class="header__socials">
+			<div class="header__socials">
 				<a
 					href="https://www.tiktok.com/"
 					class="header__socials-link"
@@ -64,12 +78,12 @@
 						height="40"
 					/>
 				</a>
-			</section>
+			</div>
 		</header>
 
 		<main>
 			<section class="title" id="main">
-				<h1 class="title__header">Это Супер-квиз!</h1>
+				<h2 class="title__header">Это Супер-квиз!</h2>
 				<p class="title__paragraph">
 					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
 					которые любят проходить тесты!
@@ -90,7 +104,6 @@
 						alt=""
 						width="394"
 						height="362"
-						loading="lazy"
 					/>
 				</picture>
 
@@ -108,18 +121,17 @@
 						alt=""
 						width="394"
 						height="362"
-						loading="lazy"
 					/>
 				</picture>
 			</section>
 
-			<section class="reacts">
+			<div class="reacts">
 				<div class="reacts__cloud">&#128515; Восхитительно</div>
 				<div class="reacts__cloud">&#128527; Лучше не бывает</div>
 				<div class="reacts__cloud">&#128540; Где найти ещё?</div>
 				<div class="reacts__cloud">&#129325; В натуре четко</div>
 				<div class="reacts__cloud">&#128539; Круто</div>
-			</section>
+			</div>
 
 			<section class="quiz" id="quiz">
 				<div class="quiz__story">
@@ -129,7 +141,7 @@
 				<div class="quiz__test">
 					<div class="quiz__test-background"></div>
 					<div class="quiz__test-background-second"></div>
-					<h3 class="quiz__test-title">Какие виды тестов вам нравятся?</h3>
+					<h2 class="quiz__test-title">Какие виды тестов вам нравятся?</h2>
 					<p class="quiz__test-text">
 						Многие из нас хоть раз попадались на эту удочку — хочешь пройти
 						всего один тест из интернета, и вдруг понимаешь, что пролетело
@@ -183,10 +195,17 @@
 							src="/src/assets/img/user_background1.png"
 							alt=""
 							class="slide__bg"
+							loading="lazy"
 						/>
 						<div class="message">
 							<div class="message__avatar">
-								<img src="/src/assets/img/user1.png" width="80" height="80" />
+								<img
+									src="/src/assets/img/user1.png"
+									width="80"
+									height="80"
+									alt="user avatar"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="message__header">Андрей Пархимович</h3>
 							<p class="message__paragraph">
@@ -202,10 +221,17 @@
 							src="/src/assets/img/user_background2.png"
 							alt=""
 							class="slide__bg"
+							loading="lazy"
 						/>
 						<div class="message">
 							<div class="message__avatar">
-								<img src="/src/assets/img/user2.png" width="80" height="80" />
+								<img
+									src="/src/assets/img/user2.png"
+									width="80"
+									height="80"
+									alt="user avatar"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="message__header">Тимур Никитенко</h3>
 							<p class="message__paragraph">
@@ -220,10 +246,17 @@
 							src="/src/assets/img/user_background3.png"
 							alt=""
 							class="slide__bg"
+							loading="lazy"
 						/>
 						<div class="message">
 							<div class="message__avatar">
-								<img src="/src/assets/img/user3.png" width="80" height="80" />
+								<img
+									src="/src/assets/img/user3.png"
+									width="80"
+									height="80"
+									alt="user avatar"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="message__header">Артур Усович</h3>
 							<p class="message__paragraph">
@@ -239,10 +272,17 @@
 							src="/src/assets/img/user_background1.png"
 							alt=""
 							class="slide__bg"
+							loading="lazy"
 						/>
 						<div class="message">
 							<div class="message__avatar">
-								<img src="/src/assets/img/user1.png" width="80" height="80" />
+								<img
+									src="/src/assets/img/user1.png"
+									width="80"
+									height="80"
+									alt="user avatar"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="message__header">Артём Шалин</h3>
 							<p class="message__paragraph">
@@ -258,10 +298,17 @@
 							src="/src/assets/img/user_background2.png"
 							alt=""
 							class="slide__bg"
+							loading="lazy"
 						/>
 						<div class="message">
 							<div class="message__avatar">
-								<img src="/src/assets/img/user2.png" width="80" height="80" />
+								<img
+									src="/src/assets/img/user2.png"
+									width="80"
+									height="80"
+									alt="user avatar"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="message__header">Никита Кондратенко</h3>
 							<p class="message__paragraph">
@@ -276,10 +323,17 @@
 							src="/src/assets/img/user_background3.png"
 							alt=""
 							class="slide__bg"
+							loading="lazy"
 						/>
 						<div class="message">
 							<div class="message__avatar">
-								<img src="/src/assets/img/user3.png" width="80" height="80" />
+								<img
+									src="/src/assets/img/user3.png"
+									width="80"
+									height="80"
+									alt="user avatar"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="message__header">Савелий Смирнов</h3>
 							<p class="message__paragraph">
@@ -318,49 +372,48 @@
 						/>
 					</div>
 				</form>
-				<section class="footer__socials">
+				<div class="footer__socials">
 					<a
 						href="https://www.tiktok.com/"
 						target="_blank"
 						rel="noopener noreferrer"
+						class="footer__socials-button footer__socials-button--tiktok"
 					>
-						<div class="footer__socials-button footer__socials-button--tiktok">
-							<img
-								src="/src/assets/icons/tiktok_symbol.svg"
-								alt="TikTok"
-								width="40"
-								height="40"
-							/></div
-					></a>
+						<img
+							src="/src/assets/icons/tiktok_symbol.svg"
+							alt="TikTok"
+							width="40"
+							height="40"
+					/></a>
 
-					<a href="https://vk.com/" target="_blank" rel="noopener noreferrer"
-						><div
-							class="footer__socials-button footer__socials-button--vkontakte"
-						>
-							<img
-								src="/src/assets/icons/vk_symbol.svg"
-								alt="vkontakte"
-								width="40"
-								height="40"
-							/></div
-					></a>
+					<a
+						href="https://vk.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="footer__socials-button footer__socials-button--vkontakte"
+					>
+						<img
+							src="/src/assets/icons/vk_symbol.svg"
+							alt="vkontakte"
+							width="40"
+							height="40"
+						/>
+					</a>
 
 					<a
 						href="https://web.telegram.org/k/"
 						target="_blank"
 						rel="noopener noreferrer"
+						class="footer__socials-button footer__socials-button--telegram"
 					>
-						<div
-							class="footer__socials-button footer__socials-button--telegram"
-						>
-							<img
-								src="/src/assets/icons/telegram_symbol.svg"
-								alt="telegram"
-								width="40"
-								height="40"
-							/></div
-					></a>
-				</section>
+						<img
+							src="/src/assets/icons/telegram_symbol.svg"
+							alt="telegram"
+							width="40"
+							height="40"
+						/>
+					</a>
+				</div>
 				<span class="footer__logo">Super Quiz</span>
 			</footer>
 		</div>
