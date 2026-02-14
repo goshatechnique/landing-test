@@ -8,6 +8,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 1000;
+	min-width: 360px;
 
 	&[aria-hidden="false"] {
 		display: block;
@@ -62,10 +63,16 @@
 		}
 	}
 
+	&__smile {
+		font-size: 128px;
+		line-height: 128px;
+	}
+
 	&__header {
 		font-family: "NeueMachina";
 		font-size: 7.2em;
 		font-weight: bold;
+		line-height: 72px;
 	}
 
 	&__text {
@@ -119,5 +126,57 @@
 	to {
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+@media (max-width: 1040px) {
+	.modal {
+		&__container {
+			padding: 24px;
+		}
+		&__header {
+			font-size: 6.4em;
+			line-height: 64px;
+		}
+
+		&__text {
+			margin: 24px 0;
+			font-size: 1.8em;
+		}
+		&__radio-group {
+			gap: 6px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.modal {
+		&__container {
+			padding: 24px;
+		}
+		&__header {
+			font-size: 5.2em;
+			line-height: 52px;
+		}
+
+		&__text {
+			font-size: 1.6em;
+		}
+
+		&__input-group {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"name"
+				"surname"
+				"comment";
+
+			.input {
+				width: 100%;
+			}
+		}
+
+		&__radio-group {
+			gap: 6px;
+		}
 	}
 }

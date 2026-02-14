@@ -1,44 +1,31 @@
 import { quizData } from "../helpers/index";
 
-export function renderQuestion(questionIndex = 0) {
+export function renderQuestion(questionIndex, options = {}) {
 	const question = quizData[questionIndex];
 	if (!question) return;
 
-	const { type, question: questionText, tags } = question;
+	const { type, question: questionTitle, tags, text: questionText } = question;
+	const { onAnswerChange } = options;
 
-	const storyTitle = document.querySelector(".quiz__story-title");
 	const testTitle = document.querySelector(".quiz__test-title");
-	const storyText = document.querySelector(".quiz__story-text");
+	const testText = document.querySelector(".quiz__test-text");
 	const tagsContainer = document.querySelector(".quiz__test-tags");
 
-	if (!storyTitle || !testTitle || !storyText || !tagsContainer) return;
+	if (!testTitle || !tagsContainer) return;
 
-	storyTitle.textContent = questionText;
-	testTitle.textContent = questionText;
+	testTitle.textContent = questionTitle;
+	testText.textContent = questionText;
 	tagsContainer.innerHTML = "";
 
-	const updateSelectedText = () => {
-		if (type === "checkbox") {
-			const selected = tags
-				.filter((t) => t.isChecked)
-				.map((t) => t.name)
-				.join(", ");
-			storyText.textContent = selected || "";
-		} else {
-			const selected = tags.find((t) => t.isChecked)?.name || "";
-			storyText.textContent = selected;
-		}
-	};
-
 	tags.forEach((tag, index) => {
-		const id = `tag-${questionIndex}-${tag.id || index}`;
+		const id = `tag-${questionIndex}-${tag.id ?? index}`;
 		const input = document.createElement("input");
 		input.type = type;
 		input.id = id;
 		input.className =
 			type === "checkbox" ? "checkbox-button__input" : "radio-button__input";
 		input.hidden = true;
-		input.checked = tag.isChecked || false;
+		input.checked = tag.isChecked;
 		if (type === "radio") {
 			input.name = `question-${questionIndex}`;
 		}
@@ -60,11 +47,9 @@ export function renderQuestion(questionIndex = 0) {
 		tagsContainer.appendChild(label);
 	});
 
-	updateSelectedText();
-
-	tagsContainer.addEventListener("change", (e) => {
+	const handleChange = (e) => {
 		const input = e.target.closest(
-			`.${type === "checkbox" ? "checkbox-button__input" : "radio-button__input"}`,
+			type === "checkbox" ? ".checkbox-button__input" : ".radio-button__input",
 		);
 		if (!input) return;
 
@@ -81,6 +66,8 @@ export function renderQuestion(questionIndex = 0) {
 			tag.isChecked = true;
 		}
 
-		updateSelectedText();
-	});
+		if (onAnswerChange) onAnswerChange();
+	};
+
+	tagsContainer.addEventListener("change", handleChange);
 }

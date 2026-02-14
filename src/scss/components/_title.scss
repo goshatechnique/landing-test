@@ -1,0 +1,122 @@
+@use "../variables" as *;
+
+.title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-bottom-left-radius: 32px;
+	border-bottom-right-radius: 32px;
+	background-color: $white;
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+
+	&__header {
+		padding: 0;
+		margin: 0;
+		font-size: 9.6em;
+		text-align: center;
+		font-family: "NeueMachina";
+		z-index: 10;
+	}
+
+	&__paragraph {
+		font-size: 2em;
+		max-width: 700px;
+		text-align: center;
+		z-index: 10;
+	}
+
+	&__image {
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+		user-select: none;
+		width: 45%;
+		max-width: 394px;
+		width: 100%;
+		height: auto;
+
+		img {
+			display: block;
+			height: auto;
+			object-fit: contain;
+			width: 100%;
+		}
+
+		&--left {
+			left: 0;
+		}
+
+		&--right {
+			right: 0;
+			transform: scaleX(-1);
+		}
+	}
+}
+
+@media (max-width: 1439px) {
+	.title {
+		&__header {
+			font-size: 8.4em;
+		}
+
+		&__paragraph {
+			font-size: 1.6em;
+			max-width: 700px;
+		}
+
+		&__image {
+			max-width: 350px;
+		}
+	}
+}
+
+@media (max-width: 1040px) {
+	.title {
+		padding-bottom: 50px;
+
+		&__header {
+			font-size: 7.2em;
+		}
+
+		&__paragraph {
+			font-size: 1.4em;
+			max-width: 550px;
+		}
+
+		&__image {
+			max-width: 300px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.title {
+		padding-bottom: 100px;
+
+		&__header {
+			font-size: 5.2em;
+			padding: 0px 10px;
+		}
+
+		&__paragraph {
+			padding: 0px 10px;
+		}
+
+		&__image {
+			max-width: 250px;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.title {
+		padding-bottom: 125px;
+		&__image {
+			max-width: 200px;
+		}
+	}
+}

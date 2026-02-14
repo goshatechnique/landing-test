@@ -1,19 +1,28 @@
 @use "../variables" as *;
 
+.footer-wrapper {
+	background-color: $pink;
+}
+
 .footer {
 	padding: 32px 48px;
 	color: $white;
 	background-color: $black;
-	display: flex;
 	border-top-left-radius: 32px;
 	border-top-right-radius: 32px;
 	display: grid;
 	gap: 20px;
-	grid-template-columns: 1fr 250px;
+	grid-template-columns: minmax(900px, 1100px) minmax(220px, 1fr);
 	grid-template-rows: 1fr 70px;
 	grid-template-areas:
 		"form logo"
 		"socials logo";
+
+	.wrapper {
+		width: 100%;
+		height: 100%;
+		background-color: red;
+	}
 
 	&__form {
 		grid-area: form;
@@ -21,7 +30,7 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 20px;
 
-		.form-group {
+		&-group {
 			display: flex;
 			flex-direction: column;
 			gap: 8px;
@@ -59,25 +68,106 @@
 		grid-area: socials;
 		display: flex;
 		justify-content: space-between;
+		gap: 10px;
 
-		&__button {
+		&-button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			height: 70px;
 			width: 300px;
 			border-radius: 35px;
 			outline: none;
 			border: none;
 			cursor: pointer;
-		}
-		.tiktoc {
-			background-color: $tiktokBg;
-		}
+			transition: all 0.15 ease;
 
-		.vkontakte {
-			background-color: $vkontakteBg;
-		}
+			&--tiktok {
+				background-color: $tiktokBg;
+			}
 
-		.telegram {
-			background-color: $telegramBg;
+			&--vkontakte {
+				background-color: $vkontakteBg;
+			}
+
+			&--telegram {
+				background-color: $telegramBg;
+			}
+
+			&:hover {
+				opacity: 0.95;
+			}
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.footer {
+		grid-template-columns: 1fr;
+		grid-template-rows: 70px 1fr 1fr;
+		grid-template-areas:
+			"logo"
+			"form"
+			"socials";
+		&__logo {
+			justify-content: flex-start;
+			text-align: start;
+		}
+	}
+}
+
+@media (max-width: 1040px) {
+	.footer {
+		&__form {
+			grid-area: form;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-auto-rows: 1fr;
+
+			&-group {
+				label {
+					font-size: 1.8em;
+				}
+
+				input {
+					font-size: 4.2em;
+				}
+			}
+		}
+		&__socials {
+			&-button {
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		padding: 24px;
+		&__form {
+			grid-area: form;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-auto-rows: 1fr;
+
+			&-group {
+				label {
+					font-size: 1.4em;
+				}
+
+				input {
+					font-size: 2.4em;
+				}
+			}
+		}
+		&__socials {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			&-button {
+				width: 300px;
+			}
 		}
 	}
 }

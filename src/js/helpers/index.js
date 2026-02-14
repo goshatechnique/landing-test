@@ -1,9 +1,8 @@
-console.log("### JS running");
-
 export const quizData = [
 	{
 		type: "checkbox",
-		question: "Какие виды тестов вам нравятся?/",
+		question: "Какие виды тестов вам нравятся?",
+		text: "Многие из нас хоть раз попадались на эту удочку — хочешь пройти всего один тест из интернета, и вдруг понимаешь, что пролетело полдня.",
 		tags: [
 			{ id: "temp", name: "На темперамент", isChecked: false },
 			{ id: "marvel", name: "Кто я из Марвел", isChecked: false },
@@ -16,6 +15,7 @@ export const quizData = [
 	{
 		type: "radio",
 		question: "Вы любите проходить тесты?",
+		text: "Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!",
 		tags: [
 			{ id: "yes", name: "Да, я прохожу все тесты", isChecked: false },
 			{
@@ -31,6 +31,33 @@ export const quizData = [
 			{
 				id: "request",
 				name: "Не люблю проходить тесты, но иногда приходится",
+				isChecked: false,
+			},
+		],
+	},
+	{
+		type: "radio",
+		question: "Сколько?",
+		text: "А и в правду, сколько?",
+		tags: [
+			{
+				id: "1",
+				name: "Один",
+				isChecked: false,
+			},
+			{
+				id: "2",
+				name: "Два",
+				isChecked: false,
+			},
+			{
+				id: "3",
+				name: "Три",
+				isChecked: false,
+			},
+			{
+				id: "4",
+				name: "Четыре",
 				isChecked: false,
 			},
 		],

@@ -1,16 +1,9 @@
-console.log("Сайт запущен!");
-
 import { initCarousel } from "./components/carousel";
-
 import { initModal } from "./components/modal";
-
-import { renderQuestion } from "./components/renderQuestions";
+import { initQuizNavigation } from "./components/quizNavigation";
 
 document.addEventListener("DOMContentLoaded", () => {
-	const tagsContainer = document.querySelector(".quiz__test-tags");
-	if (tagsContainer) {
-		renderQuestion(1);
-	}
+	initQuizNavigation();
 	initCarousel();
 	initModal("quizModal", ".open-quiz-modal");
 });

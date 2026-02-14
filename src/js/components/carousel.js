@@ -8,7 +8,7 @@ export function initCarousel() {
 	new Swiper(".carousel", {
 		modules: [Navigation],
 		slidesPerView: "auto",
-		spaceBetween: 7,
+		spaceBetween: 8,
 		loop: true,
 		slidesOffsetBefore: 0,
 		slidesOffsetAfter: 0,
