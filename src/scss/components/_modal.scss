@@ -50,7 +50,7 @@
 		font-size: 32px;
 		color: $black;
 		cursor: pointer;
-		transition: color 0.15s ease;
+		transition: all 0.15s ease;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -87,22 +87,30 @@
 
 	&__input-group {
 		margin: 10px 0;
-		width: 100%;
 		display: grid;
 		gap: 10px;
-		grid-template-columns: 50% 50%;
+		grid-template-columns: calc(50% - 5px) calc(50% - 5px);
 		grid-auto-rows: 54px;
 		grid-template-areas:
 			"name surname"
 			"comment comment";
 
 		.input {
+			padding: 0;
+			font-family: "Raleway";
 			max-width: 100%;
 			background: none;
 			border: none;
 			outline: none;
 			border-bottom: 2px solid $black;
 			font-size: 3.2em;
+			font-weight: normal;
+			line-height: 32px;
+			color: $black;
+
+			&::placeholder {
+				color: $gray;
+			}
 
 			&-name {
 				grid-area: name;
