@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Super Quiz</title>
 		<link rel="icon" href="data:image/svg+xml,<svg></svg>" />
 		<link rel="stylesheet" href="/src/scss/main.scss" />
 		<link
@@ -25,19 +25,99 @@
 		<header class="header">
 			<span class="header__logo">Super Quiz</span>
 
-			<button class="button header__hamburger">
-				<span class="header__hamburger-text"></span>
+			<button
+				class="button header__hamburger"
+				aria-label="Открыть меню"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
+			>
+				<span></span>
+				<span></span>
+				<span></span>
 			</button>
+
+			<div class="header__mobile-menu">
+				<nav class="mobile-nav">
+					<a href="#main" class="mobile-nav__link">Главная</a>
+					<a href="#quiz" class="mobile-nav__link">Квиз</a>
+					<a href="#reviews" class="mobile-nav__link">Отзывы</a>
+					<div class="mobile-nav__item">
+						<a href="#" class="mobile-nav__link mobile-nav__link--parent"
+							>Не главная</a
+						>
+						<div class="mobile-nav__submenu">
+							<a href="#" class="submenu__link submenu__link--half">Подпункт</a>
+							<a href="#" class="submenu__link submenu__link--half"
+								>Ещё подпункт</a
+							>
+							<a href="#" class="submenu__link">И ещё один подпункт</a>
+						</div>
+					</div>
+				</nav>
+				<div class="mobile-socials">
+					<a
+						href="https://www.tiktok.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mobile-socials__link"
+					>
+						<img
+							src="/src/assets/icons/tiktok.svg"
+							alt="TikTok"
+							width="40"
+							height="40"
+						/>
+					</a>
+					<a
+						href="https://vk.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mobile-socials__link"
+					>
+						<img
+							src="/src/assets/icons/vk.svg"
+							alt="ВКонтакте"
+							width="40"
+							height="40"
+						/>
+					</a>
+					<a
+						href="https://web.telegram.org/k/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mobile-socials__link"
+					>
+						<img
+							src="/src/assets/icons/telegram.svg"
+							alt="Телеграм"
+							width="40"
+							height="40"
+						/>
+					</a>
+				</div>
+				<button class="button button__contact-mobile open-quiz-modal">
+					Связаться с нами
+				</button>
+			</div>
 
 			<nav class="header__navigator">
 				<a href="#main" class="header__navigator-link">Главная</a>
 				<a href="#quiz" class="header__navigator-link">Квиз</a>
 				<a href="#reviews" class="header__navigator-link">Отзывы</a>
-				<a href="#" class="header__navigator-link">Не главная</a>
+				<div class="dropdown">
+					<a href="#" class="header__navigator-link">Не главная</a>
+					<div class="dropdown__menu">
+						<a href="#" class="dropdown__item">Подпункт</a>
+						<a href="#" class="dropdown__item">Ещё подпункт</a>
+						<a href="#" class="dropdown__item">И ещё один подпункт</a>
+					</div>
+				</div>
 			</nav>
+
 			<button class="button button-hide header__contact open-quiz-modal">
 				Связаться с нами
 			</button>
+
 			<div class="header__socials">
 				<a
 					href="https://www.tiktok.com/"
@@ -91,16 +171,9 @@
 				<a href="#quiz" class="button">Пройти супер-квиз</a>
 
 				<picture class="title__image title__image--left">
-					<source
-						srcset="
-							/src/assets/img/background.webp 1x,
-							/src/assets/img/background.webp 2x
-						"
-						type="image/webp"
-					/>
+					<source srcset="/src/assets/img/background.webp" type="image/webp" />
 					<img
 						src="/src/assets/img/background.png"
-						srcset="/src/assets/img/background@2x.png 2x"
 						alt=""
 						width="394"
 						height="362"
@@ -108,16 +181,9 @@
 				</picture>
 
 				<picture class="title__image title__image--right">
-					<source
-						srcset="
-							/src/assets/img/background.webp 1x,
-							/src/assets/img/background.webp 2x
-						"
-						type="image/webp"
-					/>
+					<source srcset="/src/assets/img/background.webp" type="image/webp" />
 					<img
 						src="/src/assets/img/background.png"
-						srcset="/src/assets/img/background@2x.png 2x"
 						alt=""
 						width="394"
 						height="362"
@@ -384,7 +450,8 @@
 							alt="TikTok"
 							width="40"
 							height="40"
-					/></a>
+						/>
+					</a>
 
 					<a
 						href="https://vk.com/"
@@ -448,11 +515,20 @@
 								type="text"
 								placeholder="Фамилия"
 							/>
-							<input
-								class="input input-comment"
-								type="text"
-								placeholder="Ваш комметарий"
-							/>
+							<div class="file-upload input-comment">
+								<input type="file" id="fileUpload" class="file-upload__input" />
+								<label for="fileUpload" class="file-upload__label">
+									<span class="file-upload__text">Ваш комментарий</span>
+									<span class="file-upload__button">
+										<img
+											src="/src/assets/icons/clip.svg"
+											alt="#"
+											width="24"
+											height="24"
+										/>
+									</span>
+								</label>
+							</div>
 						</div>
 						<p class="modal__text">
 							Этот квиз предназначен для тех людей, которые любят проходить
@@ -515,6 +591,6 @@
 			</div>
 		</div>
 
-		<script type="module" src="/src/js/main.js"></script>
+		<script defer type="module" src="/src/js/main.js"></script>
 	</body>
 </html>

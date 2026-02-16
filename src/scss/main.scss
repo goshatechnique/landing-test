@@ -11,6 +11,7 @@
 
 @use "/src/scss/components/checkbox";
 @use "/src/scss/components/radiobutton";
+@use "/src/scss/components/fileUploader";
 
 html {
 	height: 100%;
@@ -54,7 +55,7 @@ main {
 	color: $white;
 	border: none;
 	outline: none;
-	transition: 0.15s ease;
+	transition: all 0.15s ease;
 	font-size: 2em;
 	cursor: pointer;
 	&:hover {
@@ -66,6 +67,10 @@ main {
 	width: 100%;
 	font-size: 3.2em;
 	height: 62px;
+}
+
+.body--menu-open {
+	overflow: hidden;
 }
 
 @media (max-width: 768px) {
